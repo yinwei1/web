@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            position: absolute;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">移动</button>
+<div id="div1"></div>
+</body>
+<script>
+    var oBtn =document.getElementById("btn")
+    var oDiv =document.getElementById("div1")
+    oBtn.onclick = function () {
+        setInterval(function () {
+            oDiv.style.left =oDiv.offsetLeft+10+"px"
+        },16)
+    }
+</script>
+</html>

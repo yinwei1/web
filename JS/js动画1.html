@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 400px;
+            height: 60px;
+            background-color: red;
+        }
+        #div2{
+            width: 400px;
+            height: 60px;
+            background-color: red;
+        }
+        #div3{
+            width: 400px;
+            height: 60px;
+            background-color: red;
+        }
+        div{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="a" id="div1"></div>
+<div class="a" id="div2"></div>
+<div class="a" id="div3"></div>
+</body>
+<script>
+    var aDiv = document.getElementsByClassName("a")
+    var timer1,timer2
+    for(var i = 0;i<aDiv.length;i++) {
+        aDiv[i].onmouseover = function () {
+            var that = this
+            clearInterval(this.timer2)
+            this.timer1 = setInterval(function () {
+                var thisWidth = 0
+                thisWidth = that.offsetWidth                //获取width属性
+                that.style.width = thisWidth + 2 + "px"         //设置width属性
+                if (thisWidth > 800) {
+                    clearInterval(that.timer1)
+                }
+            }, 50)
+        }
+    }
+    for(var j = 0;j<aDiv.length;j++){
+        aDiv[j].onmouseout = function () {
+            var that = this
+            clearInterval(this.timer1)
+            this.timer2 =setInterval(function () {
+                var thisWidth = 0
+                thisWidth = that.offsetWidth
+                that.style.width = thisWidth-2+"px"
+                if(thisWidth<400){
+                    clearInterval(that.timer2)
+                }
+            },50)
+        }
+    }
+
+//    var oDiv = document.getElementById("div1")
+//    var oDiv2 = document.getElementById("div2")
+//    var oDiv3 = document.getElementById("div3")
+//    var timer1,timer2,timer3,timer4,timer5,timer6
+//    oDiv.onmouseover = function () {
+//        clearInterval(timer2)
+//        timer1 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv.offsetWidth                //获取width属性
+//            oDiv.style.width = thisWidth+2+"px"         //设置width属性
+//            if(thisWidth>800){
+//                clearInterval(timer1)
+//            }
+//        },50)
+//    }
+//    oDiv.onmouseout = function () {
+//        clearInterval(timer1)
+//        timer2 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv.offsetWidth
+//            oDiv.style.width = thisWidth-2+"px"
+//            if(thisWidth<400){
+//                clearInterval(timer2)
+//            }
+//        },50)
+//    }
+//    oDiv2.onmouseover = function () {
+//        clearInterval(timer4)
+//        timer3 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv2.offsetWidth                //获取width属性
+//            oDiv2.style.width = thisWidth+2+"px"         //设置width属性
+//            if(thisWidth>800){
+//                clearInterval(timer3)
+//            }
+//        },50)
+//    }
+//    oDiv2.onmouseout = function () {
+//        clearInterval(timer3)
+//        timer4 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv2.offsetWidth
+//            oDiv2.style.width = thisWidth-2+"px"
+//            if(thisWidth<400){
+//                clearInterval(timer4)
+//            }
+//        },50)
+//    }
+//    oDiv3.onmouseover = function () {
+//        clearInterval(timer6)
+//        timer5 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv3.offsetWidth                //获取width属性
+//            oDiv3.style.width = thisWidth+2+"px"         //设置width属性
+//            if(thisWidth>800){
+//                clearInterval(timer5)
+//            }
+//        },50)
+//    }
+//    oDiv3.onmouseout = function () {
+//        clearInterval(timer5)
+//        timer6 =setInterval(function () {
+//            var thisWidth = 0
+//            thisWidth = oDiv3.offsetWidth
+//            oDiv3.style.width = thisWidth-2+"px"
+//            if(thisWidth<400){
+//                clearInterval(timer6)
+//            }
+//        },50)
+//    }
+</script>
+</html>
