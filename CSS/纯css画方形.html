@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .a{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+        .b{
+            width: 0;
+            height: 0;
+            border: 50px solid #FF00D4
+        }
+        .c{
+            width:50%;
+            padding-bottom: 50%;
+            background-color: #FF9900;
+        }
+        .d{
+            width:50%;
+            height: 50vw;
+            background-color: black;
+        }
+        .e{
+            width:50%;
+            background-color: blue;
+        }
+        .e::after{
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+<div class="e"></div>
+</body>
+</html>
