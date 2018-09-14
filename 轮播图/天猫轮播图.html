@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .slider{
+            height: 500px;
+            /*position: relative;*/
+        }
+        .slider-panner{
+            position: absolute;
+            height: 500px;
+            width: 100%;
+            transition: all 1s ease;
+            opacity: 0;
+        }
+        .slider-panner div{
+            width: 1230px;
+            margin: 0 auto;
+        }
+        .sp-1{
+            background-color: rgb(232,232,232);
+        }
+        .sp-2{
+            background-color: rgb(0,0,0);
+        }
+        .sp-3{
+            background-color: rgb(232,232,232);
+        }
+        .active{
+            z-index: 2;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <div class="slider-panner sp-1 active">
+        <div>
+            <img src="https://img.alicdn.com/simba/img/TB1fN3WA7CWBuNjy0FaSutUlXXa.jpg" alt="">
+        </div>
+    </div>
+    <div class="slider-panner sp-2">
+        <div>
+            <img src="https://img.alicdn.com/tps/i4/TB1o_JiAVOWBuNjy0FiSutFxVXa.jpg" alt="">
+        </div>
+    </div>
+    <div class="slider-panner sp-3">
+        <div>
+            <img src="https://img.alicdn.com/simba/img/TB114X1gBjTBKNjSZFuSuv0HFXa.jpg" alt="">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var aSP=document.querySelectorAll(".slider-panner");
+    var index = 0;
+    setInterval(function () {
+        aSP[index].classList.remove("active")
+        if(index==2){
+            index=-1;
+        }
+        aSP[++index].classList.add("active")
+    },1000)
+</script>
+</html>

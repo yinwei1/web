@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 600px;
+            border: 1px solid #dddddd;
+            margin: 0 auto;
+        }
+        .topImg{
+            text-align: center;
+            position: relative;
+            height: 220px;
+        }
+        .topImg img{
+            height: 220px;
+            width: 600px;
+        }
+        .bottomImg{
+            border-top: 1px solid #dddddd;
+        }
+        .bottomImg ul li{
+            list-style: none;
+            float: left;
+            width: 149px;
+            height: 100px;
+            border-right:1px solid black;
+            text-align: center;
+        }
+        .bottomImg ul li:last-child{
+            border-right: 0;
+        }
+        .bottomImg li img{
+            width: 120px;
+            height: 100px;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="topImg">
+        <img id="showImg" src="01.jpg" alt="">
+    </div>
+    <div class="bottomImg">
+        <ul class="clearfix">
+            <li><img class="listImg" src="01.jpg" alt=""></li>
+            <li><img class="listImg" src="02.jpg" alt=""></li>
+            <li><img class="listImg" src="03.jpg" alt=""></li>
+            <li><img class="listImg" src="04.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    var aListImg = document.getElementsByClassName("listImg")
+    var oImg = document.getElementById("showImg")
+    for(var i=0;i<aListImg.length;i++){
+        aListImg[i].onmouseover =function () {
+            var thisImg = "";
+            thisImg = this.getAttribute("src")
+            oImg.setAttribute("src",thisImg)
+        }
+    }
+</script>
+</html>
