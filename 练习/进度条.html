@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #content{
+            width: 400px;
+            height: 50px;
+            border:1px solid #000;
+        }
+        #a{
+            height: 50px;
+            width: 0px;
+            background-color: red;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+        }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<div id="a"></div>
+<button id="btn">开始</button>
+</body>
+<script>
+    var oBtn = document.getElementById("btn")
+    var oA = document.getElementById("a")
+   oBtn.onclick = function () {
+       var timer = setInterval(function () {
+           oA.style.width = oA.offsetWidth+2+"px"
+           if(oA.offsetWidth==400){
+               oBtn.innerHTML = "完成"
+               clearInterval(timer)
+           }
+       },16)
+
+   }
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            position: relative;
+            width: 490px;
+            height: 170px;
+        }
+        .box img{
+            position: absolute;
+            border: 5px solid #dddddd;
+            box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+            transition: all 1s ease;
+        }
+        .box img:nth-child(1){
+            transform: rotate(30deg);
+        }
+        .box img:nth-child(2){
+            transform: rotate(-30deg);
+        }
+        .box img:hover{
+            transform: scale(1.2);
+            z-index: 2;
+            box-shadow: 5px 5px 10px rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="01.jpg" alt="">
+    <img src="02.jpg" alt="">
+</div>
+</body>
+</html>

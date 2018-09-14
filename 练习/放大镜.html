@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .sp{
+            height: 430px;
+            width: 430px;
+            float: left;
+        }
+        .sp2 img{
+            width:860px;
+        }
+        #fd{
+            height: 215px;
+            width: 215px;
+            position: absolute;
+            background: rgba(255,255,255,0.5);
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        .sp2{
+            overflow: hidden;
+            margin-left: 20px;
+            position: relative;
+        }
+        .sp2 img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="sp sp1">
+    <div >
+        <img src="https://img.alicdn.com/imgextra/i2/2549841410/TB1Kueoi5AnBKNjSZFvXXaTKXXa_!!2-item_pic.png_430x430q90.jpg" alt="">
+    </div>
+    <div id="fd" ></div>
+</div>
+
+<div class="sp sp2">
+    <div>
+        <img src="https://img.alicdn.com/imgextra/i2/2549841410/TB1Kueoi5AnBKNjSZFvXXaTKXXa_!!2-item_pic.png_430x430q90.jpg" alt="">
+    </div>
+</div>
+</body>
+<script>
+    var aDiv = document.querySelector("#fd")
+    var oSp1 = document.querySelector(".sp1")
+    var oSp2 = document.querySelector(".sp2 img")
+    oSp1.onmousemove = function (e) {
+        var SPleft = e.clientX - 107.5
+        var SPtop = e.clientY - 107.5
+        if(SPleft<=0){
+            SPleft = 0;
+        }
+        if(SPtop<=0){
+            SPtop = 0;
+        }
+        if(SPleft>=215){
+            SPleft = 215;
+        }
+        if(SPtop>=215){
+            SPtop= 215;
+        }
+        aDiv.style.left = SPleft + "px"
+        aDiv.style.top  = SPtop + "px"
+        oSp2.style.left = -SPleft*2 + "px"
+        oSp2.style.top = -SPtop*2 + "px"
+    }
+</script>
+</html>

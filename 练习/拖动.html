@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #td{
+            height: 50px;
+            width: 50px;
+            background-color:red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="td"></div>
+<script>
+    var aDiv = document.getElementById("td")
+    aDiv.onmousedown = function (e) {
+        var x = e.clientX - aDiv.offsetLeft
+        var y = e.clientY - aDiv.offsetTop
+        document.onmousemove = function (e) {
+            var ox = e.clientX
+            var oy = e.clientY
+            aDiv.style.left = ox - x + "px"
+            aDiv.style.top = oy - y + "px"
+        }
+    }
+    document.onmouseup = function () {
+        document.onmousemove = null
+    }
+</script>
+</body>
+</html>

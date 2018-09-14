@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width: 400px;
+            height: 50px;
+            border: 1px solid #000;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        #content{
+            background-color: red;
+            height: 50px;
+            width:0px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="content"></div>
+</div>
+<button id="btn">开始</button>
+</body>
+<script>
+    var oDiv = document.getElementById("content")
+    var oBtn = document.getElementById("btn")
+    btn.onclick = function () {
+        run()
+    }
+    function run() {
+        oDiv.style.width = oDiv.offsetWidth+2+"px"
+        if(oDiv.offsetWidth<400){
+            requestAnimationFrame(run)
+        }
+    }
+</script>
+</html>

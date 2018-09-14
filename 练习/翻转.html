@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        #box{
+            width: 400px;
+            height: 400px;
+            border: 1px dashed #333333;
+            position: relative;
+            transform-style:preserve-3d;
+            transition: all 1s ease;
+        }
+        div{
+            font-size: 50px;
+        }
+        #content{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            color: black;
+            position: absolute;
+        }
+        #content2{
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            color: white;
+            position: absolute;
+            transform: translateZ(-1px) rotateY(180deg);
+        }
+        #box:hover{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="content">唯创</div>
+    <div id="content2">小伙伴</div>
+</div>
+</body>
+</html>

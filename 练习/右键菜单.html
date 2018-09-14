@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #menu {
+            position: fixed;
+            display: none;
+        }
+        ul{
+            list-style-type: none;
+            border: 1px solid #000;
+            width: 80px;
+        }
+        ul li{
+            list-style-type: none;
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+        li:hover{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li>设置待办</li>
+        <li>设置未读</li>
+        <li>设置已读</li>
+        <li>删除邮件</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    var menu = document.getElementById("menu");
+    document.oncontextmenu = function(e) {
+        var e = e || window.event;
+        //鼠标点的坐标
+        var oX = e.clientX;
+        var oY = e.clientY;
+        //菜单出现后的位置
+        menu.style.display = "block";
+        menu.style.left = oX + "px";
+        menu.style.top = oY + "px";
+        //阻止浏览器默认事件
+        return false;
+    }
+    document.onclick = function(e) {
+        var e = e || window.event;
+        menu.style.display = "none"
+    }
+    var aLi = document.getElementsByTagName("li")
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function () {
+            console.log(this.innerHTML)
+            this.className = "aa"     //添加类名
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1" class="div2">hello</div>
+<div class="divarr">a</div>
+<div class="divarr">b</div>
+<div class="divarr">c</div>
+<div class="divarr">d</div>
+<span class="divarr">e</span>
+<script>
+    //重写类选择器
+/*    function getClass(cName){
+        var aDiv = document.getElementsByTagName('*')
+        for(var i=0;i<aDiv.length;i++){
+            if(aDiv[i].className== cName){
+                console.log(aDiv[i].innerHTML)
+            }
+        }
+    }
+    getClass("divarr")*/
+
+    //重写指定某个标签的类选择器
+    function a(Name,obj) {
+        Array.prototype.in_array = function (element) {
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] == element) {
+                    return true;
+                }
+            } return false;
+        }
+        var array = ['span','div']
+        array.in_array('obj')
+        if(array.in_array=true){
+            var aDiv = document.getElementsByTagName(obj)
+            for(var i=0;i<aDiv.length;i++){
+                if(aDiv[i].className== Name){
+                    console.log(aDiv[i].innerHTML)
+                }
+            }
+        }
+        else{
+            var aDiv1 = document.getElementsByTagName("*")
+            for(var i=0;i<aDiv1.length;i++){
+                if(aDiv1[i].className== Name){
+                    console.log(aDiv1[i].innerHTML)
+                }
+            }
+        }
+    }
+    a("divarr","div")
+</script>
+</body>
+</html>

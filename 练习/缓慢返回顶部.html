@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 3000px;
+            width: 200px;
+            background-color: blue;
+        }
+        button{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<button onclick="goTop()">返回顶部</button>
+<script>
+    var thisTop=0;
+    function goTop() {
+        var timer = setInterval(function () {
+            window.scrollTo(0,thisTop-=10);
+            if(thisTop<10){
+                clearInterval(timer);
+            }
+        },5)
+    }
+    window.onscroll = function () {
+        thisTop = document.documentElement.scrollTop || document.body.scrollTop;    //获取滚动条距顶部的高度
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="div1">100</div>
+    <button class="btn">开始</button>
+</div>
+</body>
+<script>
+    var btn = document.getElementsByClassName("btn")[0];
+    var oDiv = document.getElementsByClassName("div1")[0];
+    var timer;
+    play()
+    function play(){
+        timer = setInterval(function(){
+            console.log(oDiv.innerText)
+            oDiv.innerText = oDiv.innerText - 1
+            btn.innerText = "暂停"
+        },1000)
+    }
+    btn.onclick = function () {
+            if(btn.innerText == "暂停"){
+                btn.innerText = "继续"
+                clearInterval(timer)
+                num = 1
+            }
+            else if(btn.innerText == "继续"){
+                play()
+            }
+    }
+
+
+</script>
+</html>
